@@ -30,12 +30,6 @@ jobs:
     - name: build
       run: npm run build
 
-    - name: deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
-
     - name: Publish to AWS S3 & CloudFront Cache Clear
       uses: opspresso/action-s3-sync@v0.2.3
       env:
